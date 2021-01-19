@@ -35,7 +35,15 @@ ggplot(data = diamonds, aes(x = color, y = carat)) +
 ## PART B: Make problems
 
 ```{r break-it-1}
-# Here's my updates! 
+### make a subset of diamonds
+big_diamonds <- diamonds %>%
+  filter(carat > 2)
+ggplot(data = big_diamonds, aes(x = price, y = carat, color = clarity)) +
+  geom_point() +
+  scale_color_viridis_d(option = 'C') +
+  theme_classic()
+
+# Here's my updates! I'm going to keep both versions
 
 good_diamonds <- diamonds %>% 
   filter(cut == "Good")
